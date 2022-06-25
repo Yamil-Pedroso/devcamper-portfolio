@@ -2043,3 +2043,40 @@ Processing by BlogsController#index as HTML
 Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 5270)
 
 
+Started GET "/" for ::1 at 2022-06-25 10:16:27 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (18.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/yamistudio/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/yamistudio/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-7.0.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | Allocations: 576)
+Completed 200 OK in 14ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 5256)
+
+
+Started GET "/blogs" for ::1 at 2022-06-25 10:16:36 +0200
+Processing by BlogsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/index.html.erb within layouts/application
+  [1m[36mBlog Load (3.8ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/views/blogs/index.html.erb:5
+  Rendered blogs/_blog.html.erb (Duration: 1.0ms | Allocations: 209)
+  Rendered blogs/_blog.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered blogs/_blog.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered blogs/_blog.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered blogs/_blog.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered blogs/index.html.erb within layouts/application (Duration: 30.0ms | Allocations: 6547)
+  Rendered layout layouts/application.html.erb (Duration: 136.4ms | Allocations: 46550)
+Completed 200 OK in 143ms (Views: 123.1ms | ActiveRecord: 15.0ms | Allocations: 47978)
+
+
+Started GET "/blogs/5" for ::1 at 2022-06-25 10:17:07 +0200
+Processing by BlogsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mBlog Load (4.9ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs" WHERE "blogs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/blogs_controller.rb:63:in `set_blog'
+  Rendering layout layouts/application.html.erb
+  Rendering blogs/show.html.erb within layouts/application
+  Rendered blogs/_blog.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered blogs/show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 808)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3057)
+Completed 200 OK in 31ms (Views: 7.6ms | ActiveRecord: 5.3ms | Allocations: 11574)
+
+
